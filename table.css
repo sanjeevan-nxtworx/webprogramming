@@ -1,0 +1,23 @@
+td {
+  width: 20%;
+}
+
+.simple-table-font {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.simple-table {
+  background-color: lightblue;
+}
+#header {
+  background-color: black;
+  color: white;
+}
+
+#selected-row {
+  color: red;
+}
+
+tr.simple-table-font {
+  color: gray;
+}

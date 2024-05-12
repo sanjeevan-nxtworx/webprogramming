@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Basic Form</title>
+    <link rel="stylesheet" href="./03-01-BasicForm.css" />
+    <style>
+      #id-name {
+        border: 2px solid grey;
+      }
+    </style>
+    <script type="text/javascript">
+      // console.log("Name:", window.name);
+      // document.write(
+      //   " Host: ",
+      //   location.host,
+      //   " HostName: ",
+      //   location.hostname,
+      //   " HREF: ",
+      //   location.href,
+      //   " Path: ",
+      //   location.pathname,
+      //   " Port: ",
+      //   location.port,
+      //   " Protocol: ",
+      //   location.protocol
+      // );
+
+      function getHTMLElement(id) {
+        let el = document.getElementById(id);
+        console.log("ELEMENT :", el);
+      }
+
+      function getHTMLElementByTag(tag) {
+        let els = document.getElementsByTagName(tag);
+        console.log(els);
+      }
+
+      function getHTMLElementByClass(classname) {
+        let els = document.getElementsByClassName(classname);
+        console.log(els);
+      }
+
+      function getHTMLElementByName(name) {
+        let els = document.getElementsByName(name);
+        console.log(els);
+      }
+
+      let num = 0;
+      function SubmitForm() {
+        event.preventDefault();
+        console.log(event);
+
+        let el = document.getElementById("id-name");
+        if (el.value === "" && el.parentNode.children.length < 3) {
+          let newEl = document.createElement("span");
+          newEl.innerHTML = "*";
+          newEl.style.color = "red";
+          let parentEl = el.parentNode;
+          let lastChild = parentEl.lastChild.previousSibling;
+          parentEl.insertBefore(newEl, lastChild);
+        } else {
+          if (el.parentNode.children.length === 3) {
+            let lastChild = el.parentNode.lastChild;
+            el.parentNode.removeChild(lastChild);
+          }
+        }
+      }
+
+      function SubmitMouseMove() {
+        num++;
+        console.log("Mouse MOVE: ", num);
+      }
+
+      function KeyDownName() {
+        event.stopPropagation();
+        console.log("EVENT: ", event);
+      }
+    </script>
+  </head>
+  <body>
+    <script></script>
+    <form
+      action="01-test.html"
+      method="get"
+      autocomplete="off"
+      novalidate
+      target="_self"
+    >
+      <div onkeydown="KeyDownName()">
+        <label for="id-name">Name:</label>
+        <input
+          id="id-name"
+          onkeydown="KeyDownName()"
+          name="nm"
+          type="text"
+          required
+        />
+      </div>
+      <div>
+        <label for="id-email">E-Mail:</label>
+        <input
+          id="id-email"
+          name="email"
+          type="email"
+          placeholder="Enter Valid EMail."
+        />
+      </div>
+      <div>
+        <label class="ABC" for="id-dob">Date of Birth:</label>
+        <input id="id-dob" name="dob" type="date" value="1999-05-02" />
+      </div>
+      <div>
+        <label for="id-prof">Profile:</label>
+        <input id="id-prof" name="profile" type="file" />
+      </div>
+      <div>
+        <label for="id-favcolor">Favourite Color:</label>
+        <input id="id-favcolor" name="favclr" type="color" />
+      </div>
+      <div>
+        <label for="id-password">Password:</label>
+        <input id="id-password" name="password" type="password" />
+      </div>
+      <div>
+        <label for="id-age">Age:</label>
+        <input id="id-age" name="age" type="range" />
+      </div>
+      <div class="group">
+        <label for="id-age-num">Age:</label>
+        <input
+          id="id-age-num"
+          name="agenum"
+          type="number"
+          value="18"
+          min="18"
+          max="60"
+          step="5"
+        />
+      </div>
+      <fieldset class="group">
+        <legend>Gender</legend>
+        <label for="id-male">
+          <input id="id-male" type="radio" name="gender" value="M" />
+          Male</label
+        >
+        <label for="id-female">
+          <input
+            id="id-female"
+            onkeydown="KeyDownName()"
+            type="radio"
+            name="gender"
+            value="F"
+            checked
+          />
+          Female</label
+        >
+        <div>
+          <label>Hello World</label>
+        </div>
+        <label for="id-not-specified">
+          <input id="id-not-specified" type="radio" name="gender" value="N" />
+          No Specified</label
+        >
+      </fieldset>
+      <fieldset>
+        <legend>Preferred Communication Method</legend>
+        <label for="id-pref-email">
+          <input id="id-pre-email" type="checkbox" name="prefemail" />
+          E-Mail</label
+        >
+        <label for="id-pref-sms">
+          <input id="id-pref-sms" type="checkbox" name="prefsms" checked />
+          SMS</label
+        >
+        <label for="id-pref-tel">
+          <input id="id-pref-tel" type="checkbox" name="preftel" />
+          Telephone</label
+        >
+      </fieldset>
+      <div>
+        <label for="city-id">City: </label>
+        <select id="city-id" name="city">
+          <option value="1">Mumbai</option>
+          <option value="2">Delhi</option>
+          <option value="3">Bangalore</option>
+          <option value="4">Chennai</option>
+        </select>
+      </div>
+      <div>
+        <label for="desc-id">Description: </label>
+        <textarea id="desc-id" name="desc" row="5" cols="40"></textarea>
+      </div>
+      <div>
+        <input type="submit" onclick="SubmitForm()" value="Submit Form" />
+        <input type="reset" value="Reset Form" />
+      </div>
+      <ul>
+        <li>Item Number 1</li>
+        <li>Item Number 2</li>
+        <li>Item Number 3</li>
+        <li>Item Number 4</li>
+      </ul>
+
+      <p class="para-class">
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text ever
+        since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type specimen book. It has survived not only five
+        centuries, but also the leap into electronic typesetting, remaining
+        essentially unchanged. It was popularised in the 1960s with the release
+        of Letraset sheets containing Lorem Ipsum passages, and more recently
+        with desktop publishing software like Aldus PageMaker including versions
+        of Lorem Ipsum
+      </p>
+    </form>
+    <script>
+      let el = document.querySelector("label.ABC");
+      console.log(el);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Demo</title>
+    <link rel="stylesheet" href="formitem.css" />
+    <style>
+      label {
+        width: 15%;
+        max-width: 100px;
+        min-width: 70px;
+      }
+
+      .hoverborder:active {
+        border: 2px solid red;
+      }
+    </style>
+    <script type="text/javascript">
+      function onClickedTextArea(e) {
+        e.stopPropagation();
+        console.log("On Clicked");
+        console.log(e);
+        let el = document.querySelector("#divmain");
+        console.log(el.children);
+        console.log(el.firstChild);
+        console.log(el.firstChild.nextSibling);
+        console.log(el.lastChild);
+        console.log(el.lastChild.previousSibling);
+        console.log(el.lastChild.previousSibling.previousSibling);
+        console.log(
+          el.lastChild.previousSibling.previousSibling.previousSibling
+        );
+      }
+      function onMouseEnter() {
+        console.log("On MouseEnter");
+      }
+      function onMouseLeave() {
+        console.log("On MouseLeave");
+      }
+      function onMouseMove() {
+        console.log("On MouseMove");
+      }
+
+      function onFocusDescription(e) {
+        console.log("On Focus");
+        console.log(e.target.value);
+      }
+
+      function myonSubmit(e) {
+        e.preventDefault();
+        console.log("on Submit");
+        console.log(e.target.value);
+        let areaEl = document.getElementById("desc");
+        if (areaEl.value.trim().length < 40)
+          console.log("Invalid data in Description Field");
+        else console.log("Valid data in Description Field");
+      }
+
+      function onFormLoad() {
+        console.log("This is in On Form Load");
+        let tareaEl = document.getElementById("desc");
+        if (tareaEl !== null) {
+          tareaEl.addEventListener("click", (event) => {
+            onClickedTextArea(event);
+          });
+          tareaEl.addEventListener("focus", onFocusDescription);
+        } else console.log("Text Area Element is NULL");
+      }
+    </script>
+  </head>
+  <body onload="onFormLoad()">
+    <form class="item-form" action="Form2.html" method="get" autocomplete="off">
+      <h5>Item Form</h5>
+      <div id="maindiv" class="flex-row mb-5 abc">
+        <label for="itemcode">Item Code: </label>
+        <input
+          type="text"
+          id="itemcode"
+          name="icode"
+          size="10"
+          maxlength="5"
+          autofocus
+          class="hoverborder"
+        />
+      </div>
+      <div class="flex-row mb-5">
+        <label for="size">Size</label>
+        <input class="hoverborder" type="text" id="size" name="size" />
+      </div>
+      <div class="flex-row mb-5" onClick="console.log('HI THIS IS THE DIV')">
+        <label for="desc">Description</label>
+        <textarea class="hoverborder" id="desc" name="desc" rows="10" cols="60">
+        This is some text in the TextArea
+        </textarea>
+      </div>
+      <div class="flex-row mb-5">
+        <label for="country">Country</label>
+        <select class="hoverborder" id="country" name="country">
+          <option value="IND">India</option>
+          <option value="NEP">Nepal</option>
+          <option value="SRI">Sri Lanka</option>
+        </select>
+      </div>
+      <div class="flex-row mb-5">
+        <label></label>
+        <button class="hoverborder">Click Me</button>
+      </div>
+      <div id="divmain" class="flex-row mb-5"><label></label><fieldset>
+          <legend>Gender</legend>
+          <label>
+            <input
+              class="hoverborder"
+              type="checkbox"
+              id="email"
+              name="email"
+            />
+            Email
+          </label>
+          <label>
+            <input class="hoverborder" type="checkbox" id="text" name="sms" />
+            Text
+          </label>
+          <label>
+            <input class="hoverborder" type="checkbox" id="phone" name="tel" />
+            Phone
+          </label>
+        </fieldset></div>
+      <div class="flex-row mb-5 abc">
+        <label></label>
+        <input
+          style="margin-right: 5px"
+          type="submit"
+          value="Submit Item Code"
+          onclick="myonSubmit(event)"
+        />
+        <input class="hoverborder" type="reset" value="Reset Form" />
+      </div>
+      <datalist id="countries">
+        <option value="India"></option>
+        <option value="Nepal"></option>
+        <option value="Sri Lanka"></option>
+      </datalist>
+    </form>
+    <script type="text/javascript">
+      console.log(screen.height, screen.width, screen.colorDepth);
+    </script>
+  </body>
+</html>

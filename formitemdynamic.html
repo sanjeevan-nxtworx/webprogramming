@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Demo</title>
+    <link rel="stylesheet" href="formitem.css" />
+    <style>
+      label {
+        width: 15%;
+        max-width: 100px;
+        min-width: 70px;
+      }
+
+      .hoverborder:active {
+        border: 2px solid red;
+      }
+    </style>
+    <script type="text/javascript" src="formitemdynamic.js"></script>
+  </head>
+  <body onload="onFormLoad()">
+    <form class="item-form" action="Form2.html" method="get" autocomplete="off">
+      <h5>Item Form</h5>
+      <div id="maindiv" class="flex-row mb-5 abc">
+        <label for="itemcode">Item Code: </label>
+        <input
+          type="text"
+          id="itemcode"
+          name="icode"
+          size="10"
+          maxlength="5"
+          autofocus
+          class="hoverborder"
+        />
+      </div>
+      <div class="flex-row mb-5">
+        <label for="size">Size</label>
+        <input class="hoverborder" type="text" id="size" name="size" />
+      </div>
+      <div class="flex-row mb-5" onClick="console.log('HI THIS IS THE DIV')">
+        <label for="desc">Description</label>
+        <textarea
+          class="hoverborder mb-5"
+          id="desc"
+          name="desc"
+          rows="10"
+          cols="60"
+        >
+        </textarea>
+        <p>
+          This is some
+          <dfn title="Hypertext ML">HTML</dfn> is a Hypertext element in the
+          TextArea
+        </p>
+      </div>
+      <div class="flex-row mb-5">
+        <label for="country">Country</label>
+        <select class="hoverborder" id="country" name="country">
+          <option value="IND">India</option>
+          <option value="NEP">Nepal</option>
+          <option value="SRI">Sri Lanka</option>
+        </select>
+      </div>
+      <div class="flex-row mb-5">
+        <label></label>
+        <button class="hoverborder">Click Me</button>
+      </div>
+      <div id="divmain" class="flex-row mb-5">
+        This is text
+        <label></label>
+        <fieldset>
+          <legend>Gender</legend>
+          <label>
+            <input
+              class="hoverborder"
+              type="checkbox"
+              id="email"
+              name="email"
+            />
+            Email
+          </label>
+          <label>
+            <input class="hoverborder" type="checkbox" id="text" name="sms" />
+            Text
+          </label>
+          <label>
+            <input class="hoverborder" type="checkbox" id="phone" name="tel" />
+            Phone
+          </label>
+        </fieldset>
+      </div>
+      <div id="buttondiv" class="flex-row mb-5 abc">
+        <label></label>
+        <input
+          style="margin-right: 5px"
+          type="submit"
+          value="Submit Item Code"
+          onclick="myonSubmit(event)"
+        />
+        <input class="hoverborder" type="reset" value="Reset Form" />
+      </div>
+      <datalist id="countries">
+        <option value="India"></option>
+        <option value="Nepal"></option>
+        <option value="Sri Lanka"></option>
+      </datalist>
+      <code>
+        <pre>
+        console.log("Hello World") 
+        console.log("This is a code")</pre
+        >
+      </code>
+    </form>
+  </body>
+</html>

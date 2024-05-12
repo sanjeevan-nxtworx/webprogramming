@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Demo</title>
+    <style>
+      div {
+        margin-bottom: 10px;
+      }
+
+      body {
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    </style>
+    <script>
+      function onLoadForm() {
+        let btnEl = document.getElementById("clickme");
+        btnEl.addEventListener("click", (e) => {
+          onClickMe(e);
+        });
+      }
+      function onClickMe(e) {
+        //let divEls = document.getElementsByTagName("label");
+        //for (elDiv of divEls) console.log(elDiv.innerHTML);
+
+        let nameData = document.createElement("p");
+        let nameEl = document.getElementById("name");
+        let nameVal = nameEl.value;
+        nameData.innerText = nameVal;
+        let parentEl = nameEl.parentNode;
+        parentEl.insertBefore(nameData, nameEl);
+      }
+
+      function onKeyName(e) {
+        let nameVal = e.target.value + e.key;
+      }
+
+      function onSubmitform(e) {
+        console.log("On Submit");
+        e.preventDefault();
+        e.stopPropagation();
+      }
+
+      function onDivHandler() {
+        console.log("ON SUBMIT DIV HANDLER");
+      }
+    </script>
+  </head>
+  <body onload="onLoadForm()">
+    <form method="get" target="blank" autocomplete="off" novalidate>
+      <h4>Item Form</h4>
+      <div>
+        <label for="name">Name: </label>
+        <input
+          type="text"
+          id="name"
+          placeholder="Enter Name"
+          name="studentname"
+          size="20"
+          pattern="[a-zA-Z]{10}"
+          required
+          autofocus
+          onkeypress="onKeyName(event)"
+        />
+      </div>
+      <div>
+        <label>QOH: </label>
+        <input type="number" name="qoh" max="20" min="5" step="2" />
+      </div>
+      <div>
+        <label>Desc: </label>
+        <textarea id="desc" rows="5" cols="30" name="desc">
+This is a description of Text Area
+      </textarea
+        >
+      </div>
+      <div>
+        <fieldset>
+          <legend>Sizes</legend>
+          <input
+            type="checkbox"
+            id="largechk"
+            checked="true"
+            name="sizeLarge"
+          />
+          <label for="largechk">Large</label>
+          <input type="checkbox" id="medchk" name="sizeMedium" />
+          <label for="medchk">Medium</label>
+          <input type="checkbox" id="smallchk" name="sizeSmall" />
+          <label for="smallchk">Small</label>
+        </fieldset>
+      </div>
+      <div>
+        <fieldset>
+          <legend>Type</legend>
+          <input type="radio" id="men" checked="true" name="type" value="1" />
+          <label for="men">Men</label>
+          <input type="radio" id="women" name="type" value="2" />
+          <label for="women">Women</label>
+          <input type="radio" id="boy" name="type" value="3" />
+          <label for="boy">Boy</label>
+          <input type="radio" id="girl" name="type" value="4" />
+          <label for="girl">Girl</label>
+        </fieldset>
+      </div>
+      <div>
+        <label for="color">Color: </label>
+        <input type="color" id="color" name="color" />
+      </div>
+      <div>
+        <label for="delby">Deliver By: </label>
+        <input type="datetime-local" id="delby" name="deldate" />
+      </div>
+      <div>
+        <label for="picture">Image: </label>
+        <input type="file" id="picture" name="imagename" accept="image/*" />
+      </div>
+      <div>
+        <label for="pricerange">Price Range: </label>
+        <input type="range" id="pricerange" name="pricerange" />
+      </div>
+      <div>
+        <label for="cities">Choose Cities</label>
+        <select id="cities" name="city">
+          <option value="0">Mumbai</option>
+          <option value="1">Chennai</option>
+          <option value="2">Delhi</option>
+        </select>
+      </div>
+      <div>
+        <input id="clickme" type="button" value="ClickMe!" />
+      </div>
+
+      <div onclick="onDivHandler()">
+        <input type="submit" value="submit" onclick="onSubmitform(event)" />
+        <input type="reset" value="reset" />
+      </div>
+    </form>
+    <script></script>
+  </body>
+</html>

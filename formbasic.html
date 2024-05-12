@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Basic</title>
+    <style>
+      label,
+      input {
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <form
+      name="Itemform"
+      action="Form2.html"
+      autocomplete="off"
+      method="get"
+      novalidate
+      style="
+        width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+        border: 1px solid black;
+        border-radius: 5px;
+      "
+    >
+      <label for="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="itemname"
+        required
+        maxlength="10"
+        placeholder="Enter Item Name"
+        autofocus
+      />
+      <br />
+      <label for="desc">Description:</label>
+      <textarea
+        id="desc"
+        name="itemdesc"
+        required
+        rows="5"
+        cols="50"
+      ></textarea>
+      <br />
+      <fieldset>
+        <legend>Colors:</legend>
+        <label>
+          <input type="checkbox" id="colors" name="red" />
+          Red
+        </label>
+        <label>
+          <input type="checkbox" id="colors" name="green" />
+          Green
+        </label>
+        <label>
+          <input type="checkbox" id="colors" name="blue" />
+          Blue
+        </label>
+      </fieldset>
+      <br />
+      <label for="collarcolor">Color Collar: </label>
+      <input type="color" id="collarcolor" name="ccolor" />
+      <br />
+      <label for="deliverdate">Deliver By: </label>
+      <input type="datetime-local" id="deliverdate" name="ddate" />
+      <br />
+      <label for="qty">Quantity:</label>
+      <input type="text" id="qty" name="itemqty" required />
+      <br />
+      <label for="size">Size:</label>
+      <input
+        type="number"
+        id="size"
+        name="itemsize"
+        required
+        max="10"
+        min="5"
+        step="2"
+      />
+      <br />
+      <label for="image">Image:</label>
+      <input type="file" id="image" name="itemimage" required />
+      <br />
+      <fieldset>
+        <legend>Type:</legend>
+        <label>
+          <input type="radio" name="type" value="M" />
+          Mens
+        </label>
+        <label>
+          <input type="radio" name="type" value="W" />
+          Women
+        </label>
+        <label>
+          <input type="radio" name="type" value="B" />
+          Boys
+        </label>
+        <label>
+          <input type="radio" name="type" value="G" />
+          Girls
+        </label>
+      </fieldset>
+      <br />
+      <label for="city">Choose City: </label>
+      <select id="city" name="cityname">
+        <option value="M">Mumbai</option>
+        <option value="D">Delhi</option>
+        <option value="C">Chennai</option>
+        <option value="P">Pune</option>
+      </select>
+      <br />
+      <input type="submit" value="Send To Server" />
+      <input type="reset" value="Reset" />
+    </form>
+  </body>
+</html>

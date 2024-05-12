@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Access Input Elements With JavaScript</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <h2>Access Input Elements With JavaScript</h2>
+    <h3>Using getElementsByClassName</h3>
+
+    <h3>Input:</h3>
+    <label for="textInput1">Login ID: </label>
+    <input id="loginid" type="text" class="inputField" />
+    <br />
+    <label for="textInput1">Password: </label>
+    <input type="password" class="inputField" />
+    <br />
+    <button id="loginBtn" onclick="" type="button">Login</button>
+
+    <h3>Output:</h3>
+    <p id="output"></p>
+    <p id="output2"></p>
+    <script>
+      const buttonEle = document.getElementById("loginBtn");
+
+      function inputKey() {
+        let inputValue = document.getElementById("loginid").value;
+        document.getElementById("output").innerHTML = inputValue;
+      }
+
+      function inputkey2() {
+        document.getElementById("output2").innerHTML = "Second handler called";
+      }
+
+      buttonEle.addEventListener("click", inputKey);
+      buttonEle.addEventListener("click", inputkey2);
+
+      function getInputValue() {
+        let elements = document.getElementsByTagName("input");
+        console.log(elements);
+        let idValue = elements[0].value;
+        let passwordValue = elements[1].value;
+        document.getElementById("output").innerHTML =
+          idValue + " " + passwordValue;
+        console.log(elements);
+      }
+    </script>
+  </body>
+</html>

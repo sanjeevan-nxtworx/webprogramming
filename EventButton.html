@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <style>
+    div {
+      display: flex;
+    }
+    label {
+      width: 50px;
+      margin: 5px;
+    }
+    input {
+      width: 150px;
+      margin: 5px;
+    }
+  </style>
+  <body>
+    <div>
+      <label>Name: </label>
+      <input id="name" type="text" />
+    </div>
+    <div>
+      <label>Age: </label>
+      <input type="number" id="age" type="text" />
+    </div>
+    <div>
+      <label>City: </label>
+      <input id="city" type="text" />
+    </div>
+    <div>
+      <label>Country: </label>
+      <input id="country" type="text" />
+    </div>
+    <button onclick="onSave()">Save</button>
+  </body>
+  <script>
+    function onSave() {
+      // On click read the values of each data and check the value
+      let name = document.getElementById("name");
+
+      let age = document.getElementById("age");
+
+      let city = document.getElementById("city");
+
+      let country = document.getElementById("country");
+    }
+  </script>
+</html>

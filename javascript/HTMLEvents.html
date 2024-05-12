@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML Events</title>
+    <style>
+      body {
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      div {
+        margin-bottom: 10px;
+      }
+
+      label {
+        display: inline-block;
+        width: 120px;
+      }
+    </style>
+
+    <script>
+
+      function onMouseMove() {
+        console.log("mouse move");
+        console.log(event);
+      }
+      function clickButton(e) {
+        event.preventDefault();
+        if (!event.altKey)
+        return; 
+
+        let el = document.getElementById("nameid");
+        if (el.value === "")
+        {
+          
+          if (el.parentNode.children.length != 3)
+          {
+          let newEl = document.createElement("div");
+          newEl.innerHTML = "Name cannot be empty";
+          newEl.style.color = "red";
+          el.parentNode.appendChild(newEl);
+          }
+        }
+        else 
+        {
+          if (el.parentNode.children.length === 3)
+          {
+            let errNode = el.parentNode.lastChild;
+            el.parentNode.removeChild(errNode);
+          }
+        }
+
+        el = document.getElementById("descid");
+        console.log(el.value);
+
+        el = document.getElementById("dobid");
+        console.log(el.value);
+        let dob = new Date(el.value);
+        console.log(dob, typeof dob);
+        let today = new Date();
+        let diff = (today.valueOf() - dob.valueOf())/(1000 * 60 * 60 * 24);
+        if (diff < 365 * 18)
+          console.log("Date Error");
+        else 
+          console.log("Date Ok")
+        
+        el = document.getElementById("typedom");
+        if (el.checked)
+          console.log(el.value);
+
+        el = document.getElementById("typeintl");
+        if (el.checked)
+          console.log(el.value);
+
+        el = document.getElementById("cityid");
+        console.log(el.value);
+
+
+
+        // let el = document.getElementById("nameid");
+        // console.log(el.value);
+        // el.value = "Hello";
+        
+        // console.log("Event", e.target.innerHTML)
+      }
+
+      function onClickDomestic() {
+        let dropdown = document.getElementById("cityid");
+        dropdown.innerHTML = ""; // Clear the dropdown
+        let option = document.createElement("option");
+        option.text = "Mumbai";
+        option.value = "mum";
+        dropdown.add(option);
+        
+        option = document.createElement("option");
+        option.text = "Delhi";
+        option.value = "del";
+        dropdown.add(option);
+
+        option = document.createElement("option");
+        option.text = "Bangalore";
+        option.value = "blr";
+        dropdown.add(option);
+      }
+
+      function onClickInternational(e) {
+        let dropdown = document.getElementById("cityid");
+        dropdown.innerHTML = ""; // Clear the dropdown
+        let option = document.createElement("option");
+        option.text = "London";
+        option.value = "lon";
+        dropdown.add(option);
+        
+        option = document.createElement("option");
+        option.text = "Paris";
+        option.value = "par";
+        dropdown.add(option);
+
+        option = document.createElement("option");
+        option.text = "Cairo";
+        option.value = "cai";
+        dropdown.add(option);
+      }
+    </script>
+
+  </head>
+  <body onclick="console.log('in body click')">
+    <form  onsubmit="submitFunction()" onclick="console.log('In Form Click')">
+      <div>
+        <label for="nameid">Name: </label>
+        <input id="nameid" text="text" />
+      </div>
+      <div>
+        <label for="descid">Description: </label>
+        <textarea id="descid" rows="5" cols="40" onmousemove="onMouseMove()"></textarea>
+      </div>
+      <div>
+        <label for="dobid">Date of Birth: </label>
+        <input id="dobid" type="date" />
+      </div>
+      <div>
+        <label for="typedom">
+          <input
+            type="radio"
+            onchange="onClickDomestic()"
+            class="radioclass"
+            name="type"
+            value="1"
+            checked
+            id="typedom"
+          />
+          Domestic
+        </label>
+        <label for="typeintl">
+          <input
+            type="radio"
+            onchange="onClickInternational()"
+            name="type"
+            value="2"
+            id="typeintl"
+          />
+          International
+        </label>
+      </div>
+      <div>
+        <label for="cityid">City: </label>
+        <select id="cityid">
+          <option value="mum">Mumbai</option>
+          <option value="del">Delhi</option>
+          <option value="ben">Bengalaru</option>
+        </select>
+      </div>
+      <div onclick="console.log('In DIV onClick')">
+        <input type="submit" value="Save Form" />
+        <button onclick="clickButton(event)">Click Me!</button>
+      </div>
+    </div>
+  </form>
+</html>

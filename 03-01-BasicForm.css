@@ -1,0 +1,51 @@
+form {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 20px double grey;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.group {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+[name="dob"] {
+  font-size: x-large;
+  font-weight: bold;
+  color: azure;
+}
+
+p::first-line {
+  font-variant: small-caps;
+  font-weight: 800;
+  font-size: 2rem;
+}
+
+#id-age-num {
+  border: 2px solid red;
+  border-radius: 5px;
+}
+
+.para-class {
+  border: 1px solid black;
+  height: 100px;
+  overflow: clip;
+  overflow-y: scroll;
+  text-align: justify;
+  text-indent: 20px;
+  letter-spacing: 1px;
+  background-color: red;
+  transition-property: background-color;
+  transition-duration: 2s;
+}
+
+.para-class:hover {
+  background-color: yellow;
+}
+
+ul {
+  list-style: hebrew inside;
+}

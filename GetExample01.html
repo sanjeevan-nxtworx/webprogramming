@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Access Input Elements With JavaScript</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <h2>Access Input Elements With JavaScript</h2>
+    <h3>Using getElementById</h3>
+
+    <h3>Input:</h3>
+    <label for="textInput1">Login: </label>
+    <input type="text" id="textInput1" />
+    <br />
+    <label for="textInput1">Password: </label>
+    <input type="password" id="textInput2" />
+    <br />
+    <button type="button" onclick="getInputValue()">Login</button>
+
+    <h3>Output:</h3>
+    <p id="output"></p>
+    <script>
+      function getInputValue() {
+        let idValue = document.getElementById("textInput1").value;
+        let passwordValue = document.getElementById("textInput2").value;
+
+        document.getElementById("output").innerHTML =
+          idValue + " " + passwordValue;
+      }
+    </script>
+  </body>
+</html>

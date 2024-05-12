@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form</title>
+    <style>
+      table {
+        width: 50%;
+        max-width: 200px;
+      }
+      form {
+        border: 2px solid red;
+      }
+      #idname {
+        border: 2px solid blue;
+      }
+
+      .label {
+        font-weight: bold;
+      }
+
+      input {
+        border: 5px solid grey;
+        padding: 5px;
+        margin: 5px 10px 20px 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <form style="font-style: italic" method="get" autocomplete="off" novalidate>
+      <table>
+        <tr>
+          <td>
+            <label class="label" for="idname">Name: </label>
+          </td>
+          <td>
+            <input type="text" id="idname" name="name" required autofocus />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label class="label" for="idemail">Email: </label>
+          </td>
+          <td>
+            <input
+              type="email"
+              id="idemail"
+              placeholder="abc@xyz.com"
+              name="email"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label class="label" for="idmessage">Message: </label>
+          </td>
+          <td>
+            <input type="text" id="idmessage" name="message" />
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <fieldset>
+              <legend>Communication Type</legend>
+              <label>
+                <input type="checkbox" name="email" checked />
+                Email
+              </label>
+              <label>
+                <input type="checkbox" name="text" />
+                Text
+              </label>
+              <label>
+                <input type="checkbox" name="chat" />
+                Chat
+              </label>
+            </fieldset>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="idcolor">Color: </label>
+          </td>
+          <td>
+            <input type="color" id="idcolor" name="color" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="iddate">Date: </label>
+          </td>
+          <td>
+            <input type="date" id="iddate" name="date" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="idfile">File: </label>
+          </td>
+          <td>
+            <input type="file" id="idfile" name="file" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="idrange">Range: </label>
+          </td>
+          <td>
+            <input type="range" id="idrange" name="range" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="idnumber">Number: </label>
+          </td>
+          <td>
+            <input
+              type="number"
+              id="idnumber"
+              name="number"
+              size="4"
+              step="10"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="submit" value="Submit" />
+          </td>
+          <td>
+            <input type="reset" />
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>

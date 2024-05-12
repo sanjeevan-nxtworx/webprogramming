@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Javascript Demo</title>
+    <script type="text/javascript" src="htmljavascript.js"></script>
+    <style>
+      .myclass {
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body onClick="console.log('Event at body')">
+    <h1 id="myheader" class="myclass">This is Javascript Demo</h1>
+    <div id="main" onClick="console.log('Event at main')">
+      <main>
+        <section id="mainsection" onClick="console.log('Event at section')">
+          <label class="myclass" for="name">Name: </label>
+          <input class="myclass" type="text" cols="50" id="fname" name="name" />
+          <input class="myclass" type="text" cols="50" id="lname" name="name" />
+          <button class="myclass" onClick="onClickName(event)">Click</button>
+        </section>
+      </main>
+      <main>
+        <section>
+          <label class="myclass" for="dob">Date of Birth: </label>
+          <input
+            class="myclass"
+            type="date"
+            cols="50"
+            id="dob"
+            name="birthday"
+          />
+        </section>
+        <section>
+          <label class="myclass" for="address">Address: </label>
+          <textarea
+            class="myclass"
+            type="text"
+            cols="50"
+            id="address"
+            name="address"
+          >
+Please enter Address</textarea
+          >
+        </section>
+      </main>
+    </div>
+    <script>
+      let el = document.getElementById("fname");
+      el.addEventListener("input", (event) => {
+        removeErrorMsg(event);
+      });
+    </script>
+  </body>
+</html>

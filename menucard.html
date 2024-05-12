@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Burger Menu Card</title>
+    <style>
+      .blockimg {
+        display: block;
+        border-radius: 50%;
+      }
+      body {
+        background-color: black;
+        justify-content: center;
+        margin: 10%;
+        padding-right: 10%;
+        color: white;
+      }
+
+      .selected {
+        color: yellow;
+      }
+
+      .unselected {
+        color: white;
+      }
+
+      .noborder {
+        margin: 30px;
+        border: 2px solid black;
+      }
+
+      .thinborder {
+        margin: 30px;
+        border: 2px solid white;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="justify-content: center; border: 2px white solid; width: 50%">
+      <h1 style="display: block; text-align: center; border: 2px yellow solid">
+        MENU BURGER
+      </h1>
+      <div style="display: flex; margin: 30px">
+        <div id="veg" className="noborder">
+          <h3 className="unselected"><u>Veg Burgers</u></h3>
+          <ul>
+            <li>Crispy Veg Burger</li>
+            <li>Veg Makhani Burst Burger</li>
+            <li>Crispy Veg Double Patty</li>
+            <li>Veggie Burger</li>
+            <li>Whopper Jr Veg</li>
+          </ul>
+        </div>
+        <img
+          style="margin: 30px"
+          class="blockimg"
+          src="Burger.jpg"
+          alt="This is a picture of delicious Burger"
+          width="190px"
+          height="190px"
+          onclick="onClickImage(event, 'veg')"
+          onmouseenter="onMouseEnterImage('veg')"
+          onmouseleave="onMouseLeaveImage('veg')"
+        />
+      </div>
+      <div style="display: flex; margin: 30px">
+        <div id="nonveg" className="noborder">
+          <h3 className="unselected"><u>Non-Veg Burgers</u></h3>
+          <ul>
+            <li>Crispy Chicken Burger</li>
+            <li>Chicken Makhani Burst Burger</li>
+            <li>Cripsy Chicken Double Patty</li>
+            <li>Chicken Tandoori Burger</li>
+            <li>Whopper Jr Chicken</li>
+          </ul>
+        </div>
+        <img
+          class="blockimg"
+          src="Burger1.jpg"
+          alt="This is a picture of delicious Burger"
+          width="190px"
+          height="190px"
+          onclick="onClickImage(event, 'nonveg')"
+          onmouseenter="onMouseEnterImage('nonveg')"
+          onmouseleave="onMouseLeaveImage('nonveg')"
+        />
+      </div>
+      <div style="display: flex; margin: 30px">
+        <div id="premium" className="noborder">
+          <h3 className="unselected"><u>Premium Burgers</u></h3>
+          <ul>
+            <li onclick="selectItem(this)">Crispy Chicken Burger</li>
+            <li>Chicken Makhani Burst Burger</li>
+            <li>Cripsy Chicken Double Patty</li>
+            <li>Chicken Tandoori Burger</li>
+            <li>Whopper Jr Chicken</li>
+          </ul>
+        </div>
+        <img
+          class="blockimg"
+          src="Burger2.jpg"
+          alt="This is a picture of delicious Burger"
+          width="190px"
+          height="190px"
+          onclick="onClickImage(event, 'premium')"
+          onmouseenter="onMouseEnterImage('premium')"
+          onmouseleave="onMouseLeaveImage('premium')"
+        />
+      </div>
+    </div>
+    <script>
+      function onMouseEnterImage(idValue) {
+        let el = document.getElementById(idValue);
+        el.className = "thinborder";
+      }
+
+      function onMouseLeaveImage(idValue) {
+        let el = document.getElementById(idValue);
+        el.className = "noborder";
+      }
+
+      function onClickImage(e, idValue) {
+        console.log("Event: ", e);
+        if (e.altKey === true) {
+          let el = document.getElementById(idValue);
+          if (el.className === "selected") el.className = "unselected";
+          else el.className = "selected";
+        }
+        console.log("InEventHander: Image");
+      }
+
+      function onClickVegBurger() {
+        let el = document.getElementById("veg");
+        if (el.className === "selected") el.className = "unselected";
+        else el.className = "selected";
+
+        console.log("InEventHander: Veg Burger");
+      }
+
+      function onClickNonVegBurger() {
+        let el = document.getElementById("nonveg");
+        if (el.className === "selected") el.className = "unselected";
+        else el.className = "selected";
+
+        console.log("InEventHander: Non-Veg Burger");
+      }
+
+      function onClickPremiumBurger() {
+        let el = document.getElementById("premium");
+        if (el.className === "selected") el.className = "unselected";
+        else el.className = "selected";
+
+        console.log("InEventHander: Premium Burger");
+      }
+    </script>
+  </body>
+</html>

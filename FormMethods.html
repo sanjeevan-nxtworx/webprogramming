@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Methods</title>
+  </head>
+  <body>
+    <form novalidate autocomplete="off" action="" method="get">
+      <label for="empid">Employee ID</label>
+      <input required type="text" id="empid" name="idemp" />
+      <br />
+      <label for="empname">Employee Name</label>
+      <input type="text" id="empname" name="name" />
+      <br />
+      <fieldset>
+        <legend>Communication Method</legend>
+        <label for="email">Email</label>
+        <input type="radio" id="email" value="email" name="commmethod" />
+        <label for="text">Text</label>
+        <input type="radio" id="text" value="text" name="commmethod" />
+        <label for="phone">Phone</label>
+        <input type="radio" id="phone" value="phone" name="commmethod" />
+      </fieldset>
+
+      <select name="browsers">
+        <option value="chrome">Google Chrome</option>
+        <option value="edge">Microsoft Edge</option>
+        <option value="firefox">Firefox</option>
+      </select>
+      <textarea row="5" cols="30" name="address"> </textarea>
+      <br />
+
+      <input type="submit" value="Send" />
+    </form>
+  </body>
+</html>

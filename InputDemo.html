@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page Title</title>
+  </head>
+  <body>
+    <form action="/my-handling-form-page" method="post">
+      <fieldset>
+        <legend>Mandatory Information</legend>
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter your name"
+          autofocus
+        />
+        <br />
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" />
+        <br />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" />
+        <br />
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="0" max="100" step="5" />
+        <br />
+
+        <label for="gender">Gender:</label>
+        <input type="radio" id="male" name="gender" value="male" checked />
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female" />
+        <label for="female">Female</label>
+        <br />
+      </fieldset>
+
+      <select name="City">
+        <option value="mumbai">Mumbai</option>
+        <option value="pune">Pune</option>
+        <option value="nashik">Nashik</option>
+      </select>
+      <label for="interests">Interests:</label>
+      <textarea rows="5"> </textarea>
+      <input
+        type="checkbox"
+        id="music"
+        name="interests"
+        value="music"
+        checked
+      />
+      <label for="music">Music</label>
+      <input type="checkbox" id="sports" name="interests" value="sports" />
+      <label for="sports">Sports</label>
+      <br />
+
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob" />
+      <br />
+
+      <label for="favcolor">Favorite Color:</label>
+      <input type="color" id="favcolor" name="favcolor" />
+      <br />
+
+      <label for="upload">Upload a File:</label>
+      <input type="file" id="upload" name="upload" />
+      <br />
+
+      <label for="birthdaytime">Birthday (date and time):</label>
+      <input type="datetime-local" id="birthdaytime" name="birthdaytime" />
+      <br />
+
+      <label for="bdaymonth">Birthday (month and year):</label>
+      <input type="month" id="bdaymonth" name="bdaymonth" />
+      <br />
+
+      <label for="gsearch">Search Google:</label>
+      <input type="search" id="gsearch" name="gsearch" />
+      <br />
+
+      <label for="phone">Enter your phone number:</label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+      />
+      <br />
+
+      <label for="appt">Select a time:</label>
+      <input type="time" id="appt" name="appt" />
+      <br />
+
+      <label for="homepage">Add your homepage:</label>
+      <input type="url" id="homepage" name="homepage" />
+      <br />
+
+      <label for="week">Select a week:</label>
+      <input type="week" id="week" name="week" />
+      <br />
+
+      <input type="image" src="horse.gif" alt="Test" width="48" height="48" />
+      <br />
+
+      <input type="range" />
+      <br />
+
+      <input type="button" value="Clear Page" />
+
+      <input type="submit" value="Submit" />
+      <input type="reset" />
+    </form>
+  </body>
+</html>

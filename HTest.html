@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>form Demo</title>
+  </head>
+  <body>
+    <form action="form2.html" method="get" autocomplete="off">
+      <table>
+        <tr>
+          <td>
+            <label for="name">Name: </label>
+          </td>
+          <td>
+            <input
+              type="text"
+              id="name"
+              placeholder="Please Enter Name"
+              size="50"
+              name="name"
+              maxlength="20"
+              required
+              autofocus
+            />
+          </td>
+        </tr>
+          <td>
+            <label for="age">Age: </label>
+          </td>
+          <td>
+            <input
+              type="number"
+              id="age"
+              step="2"
+              value="21"
+              name="age"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="range">Range</label>
+          </td>
+          <td>
+            <input type="range" max="50" min="20" name="Range" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="gender">Gender</label>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <input type="radio" id="male" name="genderVal" value="2" checked/>
+            <label for="male">Male</label>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <input type="radio" id="female" name="genderVal" value="1" />
+            <label for="female">Female</label>
+          </td>
+        </tr>
+          <tr>
+          <td>
+            <label for="preferredComm">Preffered Communication Method</label>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <input type="radio" id="email" name="prefComVal" value="5" checked />
+            <label for="email">E-Mail</label>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <input type="radio" id="phone" name="prefComVal" value="6" />
+            <label for="phone">Phone</label>
+          </td>
+        </tr>
+
+        <tr>
+            <td>
+                <input list="browsers">
+            </td>
+            <td>
+        <datalist id="browsers">
+            <option value="Edge">
+            <option value="Chrome">
+            <option value="Firefox">
+        </datalist>
+        </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <input type="radio" id="text" name="prefComVal" value="7" />
+            <label for="text">Text</label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="submit" value="Submit" />
+            <input type="reset" value="Reset Values" />
+            <input type="button" value="Exit Application" />
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
+
+http://127.0.0.1:5500/form2.html?genderVal=2&prefComVal=6

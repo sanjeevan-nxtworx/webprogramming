@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>First HTML</title>
+    <script>
+      function onEvent() {
+        console.log("Event Fired");
+      }
+      function onMouseEnter() {
+        console.log("Mouse Entered");
+      }
+      function onMouseLeave() {
+        console.log("Mouse left");
+      }
+
+      function onFocusInput() {
+        console.log("Input has Focus");
+      }
+
+      function onInputChanged(e) {
+        console.log("CHANGED", e);
+        let pEls = document.getElementsByTagName("p");
+        console.log(pEls);
+        let pEl = pEls[0];
+        console.log(pEl);
+
+        let pText = pEl.firstChild;
+        pText.nodeValue = "ABC";
+      }
+    </script>
+  </head>
+  <body>
+    <div id="divID">
+      <input onchange="onInputChanged(event)" type="text" />
+      <p>Text Value</p>
+    </div>
+  </body>
+</html>

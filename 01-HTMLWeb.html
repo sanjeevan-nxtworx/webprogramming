@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Web HTML</title>
+
+    <style>
+      .backcolor {
+        background-color: grey;
+      }
+
+      .backdisablecolor {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <script>
+    let num = 0;
+
+    function clickHandler(e) {
+      console.log(e);
+      if (e.ctrlKey === true) {
+        let buttonEl = document.querySelector("button");
+        let buttonClass = buttonEl.getAttribute("class");
+        if (buttonClass !== "backdisablecolor") {
+          buttonEl.style.backgroundColor = "red";
+          buttonEl.style.fontWeight = "bold";
+
+          let newEl = document.createElement("p");
+          newEl.innerHTML = "This is a paragraph element";
+
+          let parentEl = document.querySelector("#maindiv");
+          let nodeEl = document.querySelector("h2.nameClass");
+          console.log(parentEl, newEl);
+          parentEl.replaceChild(newEl, nodeEl);
+        } else {
+          buttonEl.innerText = "Disabled";
+        }
+      }
+    }
+  </script>
+  <body onclick="console.log('MOUSE CLICK ON PARENT')">
+    <div id="maindiv">
+      <h1>
+        Hello World
+        <span class="nameClass"></span>
+      </h1>
+      <h2 id="nm">name</h2>
+      <h2 class="nameClass">Name2</h2>
+      <p
+        onmouseenter="console.log('Mouse Entered')"
+        onmouseleave="console.log('Mouse Left')"
+        onmousemove="console.log('mouse has moved')"
+      >
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text ever
+        since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type specimen book. It has survived not only five
+        centuries, but also the leap into electronic typesetting, remaining
+        essentially unchanged. It was popularised in the 1960s with the release
+        of Letraset sheets containing Lorem Ipsum passages, and more recently
+        with desktop publishing software like Aldus PageMaker including versions
+        of Lorem Ipsum.
+      </p>
+      <button class="backcolor">Click</button>
+    </div>
+    <script>
+      let buttonEl = document.querySelector("button");
+      buttonEl.addEventListener("click", clickHandler);
+    </script>
+  </body>
+</html>

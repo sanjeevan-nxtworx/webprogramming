@@ -1,0 +1,59 @@
+https://www.youtube.com/watch?v=W_FYevX_7sE
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Java Script</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    </div>
+    <script>
+        class Student {
+            constructor(name, college,age)
+            {
+                this.name = name;
+                this.college = college;
+                this.age = age;
+                this.marks1 = 0;
+                this.marks2 = 0;
+                this.marks3 = 0;
+                this.hobbies = "";
+            }
+
+            setMarks1(marks)
+            {
+                this.marks1 = marks;
+            }
+
+            setMarks2(marks)
+            {
+                this.marks2 = marks;
+            }
+
+            setMarks3(marks)
+            {
+                this.marks3 = marks;
+            }
+
+            displayStudent()
+            {
+                console.log("Name: ",this.name, " College: ", this.college, " Age: ", this.age);
+                console.log("Marks 1: ", this.marks1, " Marks 2: ", this.marks2, "Marks 3: ", this.marks3);
+            }
+        }
+
+        let natasha = new Student("Natasha", "College Name", 17);
+        natasha.setMarks1(50);
+        natasha.setMarks2(48);
+        natasha.setMarks3(52);
+        natasha.hobbies = "painting";
+
+        let harsh = new Student("harsh", "New College", 19);
+        console.log(natasha);
+        console.log(harsh);
+        console.log(Object.getOwnPropertyNames(Student))
+    </script>
+  </body>
+</html>

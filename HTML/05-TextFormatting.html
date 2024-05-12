@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML DOM</title>
+    <script>
+      function onPara11Change() {
+        let el = document.getElementById("para1-1");
+        el.style.backgroundColor = "yellow";
+        el.style.color = "red";
+        el.innerHTML = "This is changed";
+      }
+    </script>
+  </head>
+  <body>
+    <p><b>Bold Text</b> and another <strong>bold text</strong></p>
+    <p><i>Italic Text</i> and another <em>Italic text</em></p>
+    <p><u>Underline Text</u></p>
+    <p><ins>Inserted Text</ins></p>
+    <p><del>Deleted Text</del></p>
+    <p><s>Strike Through Text</s></p>
+    <pre>This is log<sub>x</sub>10<sup>5</sup></pre>
+    <address>101, Highland enclave MJ road</address>
+    <p>
+      A <defn id="def-validator">Validator</defn>This is the definition of
+      validator
+    </p>
+    <blockquote cite="www.example.com">
+      This is a quote from a great philosopher
+    </blockquote>
+  </body>
+</html>

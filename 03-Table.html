@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>First HTML</title>
+    <style>
+      thead {
+        background-color: darkblue;
+        color: white;
+      }
+      tfoot {
+        background-color: lightgray;
+      }
+      tbody {
+        background-color: lightblue;
+      }
+      table {
+        width: 400px;
+        border-collapse: collapse;
+        border: 2px solid white;
+      }
+      td,
+      th {
+        border: 1px solid black;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Paragraph Tag to describe text-->
+
+    <!--img src="burger.jpg" alt="msn" width="60px" height="42px" /-->
+
+    <table>
+      <caption style="caption-side: bottom">
+        <u><b>City Weather</b></u>
+      </caption>
+
+      <thead>
+        <tr>
+          <th></th>
+          <th>Mumbai</th>
+          <th>Pune</th>
+          <th>Bangalore</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Temp</td>
+          <td>30<sup>o</sup>C</td>
+          <td>28<sup>o</sup>C</td>
+          <td>28<sup>o</sup>C</td>
+        </tr>
+        <tr>
+          <td>Rain</td>
+          <td>2 mm</td>
+          <td colspan="2">5 mm</td>
+        </tr>
+        <tr>
+          <td rowspan="2">Humidity</td>
+          <td>80%</td>
+          <td>50%</td>
+          <td>55%</td>
+        </tr>
+        <tr>
+          <td>80%</td>
+          <td>50%</td>
+          <td>55%</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>Average</td>
+          <td>10<sup>o</sup>C</td>
+          <td>50mm</td>
+          <td>45%</td>
+        </tr>
+      </tfoot>
+    </table>
+  </body>
+</html>

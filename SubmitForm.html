@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Submit</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <div id="maindiv">
+      <div>
+        <label for="fname">First Name</label>
+        <input id="fname" type="text" />
+      </div>
+      <div>
+        <label for="lname">Last Name</label>
+        <input id="lname" type="text" />
+      </div>
+      <div id="btndiv">
+        <button id="subBtn">SUBMIT</button>
+      </div>
+      <p id="errormsg"></p>
+    </div>
+    <script>
+      const maindiv = document.getElementById("maindiv");
+      const fname = document.getElementById("fname");
+      const lname = document.getElementById("lname");
+      const btndiv = document.getElementById("btndiv");
+      const submitBtn = document.getElementById("subBtn");
+
+      maindiv.addEventListener("click", (e) => {
+        console.log("In Main Div Event Handler");
+      });
+
+      btndiv.addEventListener("click", (e) => {
+        console.log("In Button Div Event Handler");
+      });
+
+      submitBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        console.log("In Button Event Handler");
+      });
+    </script>
+  </body>
+</html>

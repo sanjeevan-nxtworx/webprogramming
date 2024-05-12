@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Table HTML</title>
+    <link rel="stylesheet" href="table.css" />
+    <style>
+      .transitiondemo {
+        width: 20rem;
+        background-color: blue;
+        color: white;
+        transition: background-color, color;
+        transition-delay: 2s;
+        transition-duration: 500ms;
+      }
+
+      .transitiondemo:hover {
+        background-color: red;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="font-size: 15px; color: blue">
+      <p style="color: initial">
+        Oahu, in the US state of Hawaii. Its original area of 334 acres (135 ha)
+        was increased during the 1930s to 441 acres (178 ha) with fill dirt
+        after the US Navy dredged Pearl Harbor to accommodate battleships.
+      </p>
+
+      <p class="transitiondemo">
+        Oahu, in the US state of Hawaii. Its original area of 334 acres (135 ha)
+        was increased during the 1930s to 441 acres (178 ha) with fill dirt
+        after the US Navy dredged Pearl Harbor to accommodate battleships.
+      </p>
+    </div>
+  </body>
+</html>

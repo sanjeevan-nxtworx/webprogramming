@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Table</title>
+    <style>
+      th,
+      td {
+        border: 1px solid black;
+      }
+
+      thead {
+        background-color: blue;
+        color: white;
+      }
+      tbody {
+        background-color: lightgrey;
+        color: black;
+      }
+      tfoot {
+        background-color: lightgreen;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <caption>
+        Marks of Students
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">English</th>
+          <th scope="col">Hindi</th>
+          <th scope="col">Maths</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Hrishikesh Pawar</td>
+          <td>75</td>
+          <td>85</td>
+          <td>95</td>
+        </tr>
+        <tr>
+          <td>Domnic Dias</td>
+          <td>70</td>
+          <td>80</td>
+          <td>90</td>
+        </tr>
+        <tr>
+          <td>Ruby Patel</td>
+          <td>73</td>
+          <td>83</td>
+          <td>93</td>
+        </tr>
+        <tr>
+          <td>Imran Khan</td>
+          <td>71</td>
+          <td>81</td>
+          <td>91</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th scope="row">Average</th>
+          <td>72.0</td>
+          <td>92.25</td>
+          <td>92.0</td>
+        </tr>
+      </tfoot>
+    </table>
+  </body>
+</html>

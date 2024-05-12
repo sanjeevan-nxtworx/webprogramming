@@ -1,0 +1,152 @@
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .main-body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .half-body {
+    width: 49%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .quarter-body {
+    width: 49%;
+    border: 1px solid black;
+    display: flex;
+  }
+
+  .image-body {
+    width: 50%;
+    border: 1px solid black;
+  }
+}
+
+/* Smallest breakpoint  */
+@media only screen and (max-width: 400px) {
+  .main-body {
+    justify-content: space-around;
+  }
+
+  .half-body {
+    justify-content: space-between;
+  }
+
+  .quarter-body {
+    width: 100%;
+    margin-top: 5px;
+    border: 1px solid black;
+  }
+
+  .image-body {
+    width: 99%;
+    height: 80px;
+    border: 1px solid black;
+  }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (min-width: 400px) and (max-width: 600px) {
+  .main-body {
+    justify-content: space-around;
+  }
+
+  .half-body {
+    width: 99%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .quarter-body {
+    width: 49%;
+    margin-top: 5px;
+    border: 1px solid red;
+  }
+
+  .image-body {
+    width: 99%;
+    height: 50px;
+    border: 1px solid red;
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .main-body {
+    justify-content: space-around;
+  }
+
+  .half-body {
+    width: 99%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .quarter-body {
+    width: 49%;
+    border: 1px solid blue;
+    display: flex;
+    margin-top: 5px;
+  }
+
+  .image-body {
+    width: 50%;
+    border: 1px solid blue;
+  }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .main-body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .half-body {
+    width: 49%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .quarter-body {
+    width: 49%;
+    border: 2px solid green;
+    display: flex;
+  }
+
+  .image-body {
+    width: 50%;
+    border: 2px solid green;
+  }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .main-body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .half-body {
+    width: 49%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .quarter-body {
+    width: 49%;
+    border: 2px solid yellow;
+    display: flex;
+  }
+
+  .image-body {
+    width: 50%;
+    border: 2px solid yellow;
+  }
+}
